@@ -4,7 +4,7 @@ namespace CivMonitor\Model\Result;
 
 use Zend\Stdlib\Hydrator\ClassMethods;
 
-class PostHydrator extends ClassMethods
+class ResultHydrator extends ClassMethods
 {
     /**
      * Extract values from $object

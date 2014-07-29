@@ -2,11 +2,12 @@
 
 namespace CivMonitor\Model\Result;
 
-use ZfcBase\Mapper\AbstractDbMapper;
+use ZfcBase\Mapper\AbstractDbMapper,
+    CivMonitor\Service\DbAdapterAwareInterface;
 
 use Zend\Stdlib\Hydrator\HydratorInterface;
 
-class PostMapper extends AbstractDbMapper implements PostMapperInterface, DbAdapterAwareInterface
+class ResultMapper extends AbstractDbMapper implements ResultMapperInterface, DbAdapterAwareInterface
 {
     protected $tableName = 'monitor_result';
     protected $hostnameField = 'hostname';
@@ -39,7 +40,7 @@ class PostMapper extends AbstractDbMapper implements PostMapperInterface, DbAdap
      * @param unknown_type $tableName
      * @param HydratorInterface $hydrator
      */
-    private function insert($entity, $tableName = null, HydratorInterface $hydrator = null)
+    protected function insert($entity, $tableName = null, HydratorInterface $hydrator = null)
     {
         return parent::insert($entity, $tableName, $hydrator);
     }
